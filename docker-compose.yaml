@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  
+  mysql:
+    image: mysql:5.7
+    ports: 
+        - "3307:3306"
+    volumes:
+        - .docrker/db_data:/var/lib/mysql
+    restart: always
+    environment:
+        MYSQL_DATABASE: Curso
+        MYSQL_ROOT_PASSWORD: cpassos
+    networks:
+        - app-network
+networks:
+  app-network:
+    driver: bridge
+
+
+        
+    
